@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  /* Font Utama: Modern & Clean */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  /* Warna dasar: krem sangat muda (khas kertas tua/washi) */
+  background-color: #f8f6f2;
+
+  /* Tambahkan pola tekstur halus */
+  background-image:
+    /* Efek bintik-bintik serat kertas */
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png"),
+    /* Gradien halus untuk kesan kedalaman */
+    radial-gradient(circle at top right, #fff5eb 0%, transparent 40%),
+    radial-gradient(circle at bottom left, #fdf8f3 0%, transparent 40%);
+
+  background-attachment: fixed;
+}
+
+/* Class khusus untuk judul yang ingin kesan "Traditional Art" */
+.jp-title {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar agar tidak merusak estetika */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fb923c44;
+  /* Orange transparan */
+  border-radius: 10px;
+}
+
+/* Custom Scrollbar Utility */
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px; /* Sangat tipis */
+    height: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* Biar menyatu dengan background sidebar/modal */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e7e5e4; /* stone-200 */
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #fb923c; /* orange-400 */
+  }
+
+  /* Sembunyikan scrollbar tapi tetap bisa scroll (opsional untuk sidebar) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Dalam CSS Global */
+@keyframes scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(400%); opacity: 0; }
+}
+
+.animate-scan {
+  animation: scan 3s linear infinite;
+}

@@ -36,9 +36,9 @@ Sebuah aplikasi dashboard bertema Naruto yang interaktif untuk memantau data kar
    ```
 
 3. Jalankan Aplikasi (Development)
-  ```bash
-  npm run dev
-  ```
+   ```bash
+   npm run dev
+   ```
 
 ## Struktur Project
 ```
